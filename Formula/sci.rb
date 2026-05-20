@@ -20,6 +20,17 @@ class Sci < Formula
     bin.install binary_name => "sci-helper"
   end
 
+  service do
+    run [opt_bin/"sci-helper", "--proxy", "3001"]
+    keep_alive true
+    log_path "#{Dir.home}/.sci/helper.log"
+    error_log_path "#{Dir.home}/.sci/helper.log"
+    environment_variables(
+      SCI_CONFIG_DIR: "#{Dir.home}/.sci",
+      HOME:           Dir.home,
+    )
+  end
+
   test do
     assert_match "sci-helper", shell_output("#{bin}/sci-helper --help")
   end
