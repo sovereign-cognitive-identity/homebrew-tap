@@ -7,11 +7,11 @@ class Sci < Formula
   on_macos do
     on_arm do
       url "https://github.com/sovereign-cognitive-identity/sci/releases/download/v#{version}/sci-helper-aarch64-apple-darwin"
-      sha256 "PLACEHOLDER_ARM64_SHA256"
+      sha256 "3b823a075b3f587b311e37dff3d8e83d694b4a32fcab2eb8613f469ef829497e"
     end
     on_intel do
       url "https://github.com/sovereign-cognitive-identity/sci/releases/download/v#{version}/sci-helper-x86_64-apple-darwin"
-      sha256 "PLACEHOLDER_X86_64_SHA256"
+      sha256 "ab8bef75cb2ba697095928cbd2aef54f36ce1d785abc60980526ed78faf3202e"
     end
   end
 
