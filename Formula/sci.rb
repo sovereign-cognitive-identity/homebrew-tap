@@ -20,11 +20,6 @@ class Sci < Formula
     bin.install binary_name => "sci-helper"
   end
 
-  def post_install
-    # Ensure ~/.sci exists
-    (Dir.home + "/.sci").tap { |d| d.mkpath unless d.exist? }
-  end
-
   test do
     assert_match "sci-helper", shell_output("#{bin}/sci-helper --help")
   end
